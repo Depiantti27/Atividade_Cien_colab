@@ -1,27 +1,27 @@
 ---
-title: "Untitled"
+title: "Página Teste"
 author: "Gabriel Depiantti"
 date: "21/10/2021"
 output: html_document
 ---
 
 
-Pacotes necessários para o desenvolimento dos scrits
+Pacotes necessários para as funções utilizadas
 ```{r}
-install.packages("tidyverse")
-install.packages("rgbif")
-install.packages("dplyr")
+#install.packages("tidyverse") 
+#install.packages("rgbif")
+#install.packages("dplyr")
 require(tidyverse)
 require(rgbif)
 require(dplyr)
-install.packages("ggmap")
-install.packages("maps")
-install.packages("mapdata")
-install.packages('ggplot2')
-library(ggplot2)
-library(ggmap)
-library(maps)
-library(mapdata)
+#install.packages("ggmap")
+#install.packages("maps")
+#install.packages("mapdata")
+#install.packages('ggplot2')
+require(ggplot2)
+require(ggmap)
+require(maps)
+require(mapdata) 
 ```
 
 
@@ -127,7 +127,7 @@ lapply(xylopea_gbif1, unique)
 
 Problemas não reportados
 
-Para realizarmos uma apuração mais fina, checamos a ocorrencia da especies de uma forma mais restrita através dos dados em 'locality'
+Para realizarmos uma apuração mais fina, checamos a ocorrencia da especies de uma forma mais restrita através dos dados em 'habitat'
 ```{r}
 # investigar niveis suspeitos
 xylopea_gbif1 %>% 
@@ -135,6 +135,9 @@ xylopea_gbif1 %>%
     pull()
 ```
 
+
+
+Aqui podemos ver que a área de ocorrência da especie é predominantemente na Ámerica do Sul
 ```{r}
 # habitat
 xylopea_gbif1 %>%
@@ -161,7 +164,7 @@ xylopea_gbif1 %>%
 
 
 
-
+Podemos aqui gerar um mapa mundo confirmando que a área de distribuição da Xylopia sericea é prodominante da América do Sul, com alguns pontos de ocorrencia na América Central e um ponto na África.
 ```{r}
 world <- map_data('world')
 
